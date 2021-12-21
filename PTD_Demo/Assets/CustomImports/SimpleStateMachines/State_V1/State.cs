@@ -4,9 +4,9 @@ namespace StateV1
 {
     public abstract class State
     {
-        protected Name.NAMESystem gameFlowSystem;
+        protected PTD_Demo.PTDSystem gameFlowSystem;
 
-        public State(Name.NAMESystem gameFlow)
+        public State(PTD_Demo.PTDSystem gameFlow)
         {
             gameFlowSystem = gameFlow;
         }
