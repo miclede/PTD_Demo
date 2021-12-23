@@ -7,6 +7,9 @@ namespace PTD_Demo
 {
     public class LevelDirector : MonoBehaviour
     {
+        [SerializeField] private EventCatalog _levelEventCatalog;
+        public EventCatalog levelEventCatalog => _levelEventCatalog;
+
         private StateMachine _levelStateMachine;
 
         private bool _mobsCleared;
@@ -16,6 +19,10 @@ namespace PTD_Demo
         private void Awake()
         {
             _levelStateMachine = new StateMachine();
+        }
+
+        private void Start()
+        {
             ConstructStates();
         }
 

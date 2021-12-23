@@ -39,6 +39,7 @@ public class GameEventListener : MonoBehaviour
         {
             if (lR.GameEvent == gameEvent)
             lR.Response.Invoke();
+            
         }
     }
 }

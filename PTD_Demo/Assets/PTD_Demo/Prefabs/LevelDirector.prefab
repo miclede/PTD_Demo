@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7575396087506999695}
   - component: {fileID: 7575396087506999694}
-  - component: {fileID: 3619723766148056325}
   m_Layer: 0
   m_Name: LevelDirector
   m_TagString: Untagged
@@ -44,33 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3b2c8aae4031c44686520beb2cadc8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _constructableUnitShop: {fileID: 0}
---- !u!114 &3619723766148056325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7575396087506999693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b243309a04541748a5043baaf38b83c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameEvent_Responses:
-  - GameEvent: {fileID: 11400000, guid: a35951d6d0c2f814cad846d25e23a44e, type: 2}
-    Response:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 7575396087506999694}
-          m_TargetAssemblyTypeName: PTD_Demo.LevelDirector, Assembly-CSharp
-          m_MethodName: SetMobsCleared
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
+  _levelEventCatalog: {fileID: 11400000, guid: 5ebfad81bba28624696fea4f222f2bde, type: 2}

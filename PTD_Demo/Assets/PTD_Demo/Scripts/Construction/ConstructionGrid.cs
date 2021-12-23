@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -6,7 +7,7 @@ namespace PTD_Demo
     public class ConstructionGrid : MonoBehaviour
     {
         [SerializeField] private Camera _mainCamera;
-        [SerializeField] private ConstructionTileProcessor _cTPSO;
+        [SerializeField] private ConstructionTileProcessorSO _cTPSO;
         [SerializeField] private GridLayout _gridLayout;
         public GridLayout gridLayout => _gridLayout;
 
@@ -17,11 +18,11 @@ namespace PTD_Demo
         private Vector3 _prevUnitPos;
         private BoundsInt _prevUnitArea;
 
-        public void SpawnBuilding(GameObject _houseBuilding)
+        public void SpawnBuilding(ShopMerchandiseSO merchandise)
         {
             if (!_currentUnit)
             {
-                _currentUnit = Instantiate(_houseBuilding, Vector3.zero, Quaternion.identity).GetComponent<ConstructableUnit>();
+                _currentUnit = Instantiate(merchandise.merchObject, Vector3.zero, Quaternion.identity).GetComponent<ConstructableUnit>();
                 _currentUnit.AssignGrid(this);
                 FollowConstructionUnit();
             }
