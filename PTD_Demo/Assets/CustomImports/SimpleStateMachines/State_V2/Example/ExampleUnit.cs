@@ -11,10 +11,10 @@ namespace StateV2Example
 
         private bool _active;
 
-        Func<bool> HasTarget() => () => TargetInRange() != null;
+        Func<bool> HasTarget => () => TargetInRange() != null;
 
         private Vector3 _destination;
-        Func<bool> CanMove() => () => CanMoveToDestination();
+        Func<bool> CanMove => () => CanMoveToDestination();
 
         private void Awake()
         {
@@ -32,10 +32,10 @@ namespace StateV2Example
             var _moveState = new ExampleUnitMove(this);
 
             //AddAnyTransition() is used to interupt ANY state when the condition is met
-            _stateMachine.AddAnyTransition(_attackState, HasTarget());
+            _stateMachine.AddAnyTransition(_attackState, HasTarget);
 
             //create the path between the states
-            At(_idleState, _moveState, CanMove());
+            At(_idleState, _moveState, CanMove);
             At(_moveState, _idleState, () => _active == false);
 
             //set the starting state

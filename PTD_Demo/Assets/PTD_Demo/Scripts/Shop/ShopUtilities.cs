@@ -10,7 +10,8 @@ namespace PTD_Demo
     {
         Fortification,
         Tower,
-        Spawner
+        Spawner,
+        Town
     }
 
     public enum CurrencyType

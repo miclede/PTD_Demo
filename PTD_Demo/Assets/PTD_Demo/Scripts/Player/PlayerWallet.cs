@@ -10,13 +10,5 @@ namespace PTD_Demo
         {
             base.Awake();
         }
-
-        public void PaymentCollection(PaymentsSO payment)
-        {
-            foreach (KeyValuePair<CurrencyType, int> collection in payment.payments)
-            {
-                _walletHoldings[collection.Key] += collection.Value;
-            }
-        }
     }
 }

@@ -7,6 +7,8 @@ namespace PTD_Demo
 {
     public abstract class Wallet : SerializedMonoBehaviour
     {
+        public Action<Dictionary<CurrencyType, int>> MakePaymentCallback => (cost) => MakePayment(cost);
+
         [ShowInInspector]
         protected Dictionary<CurrencyType, int> _walletHoldings = new Dictionary<CurrencyType, int>();
         public Dictionary<CurrencyType, int> walletHoldings => _walletHoldings;
@@ -14,6 +16,14 @@ namespace PTD_Demo
         protected virtual void Awake()
         {
             InitializeHoldings();
+        }
+
+        public void PaymentCollection(PaymentsSO payment)
+        {
+            foreach (KeyValuePair<CurrencyType, int> collection in payment.payments)
+            {
+                _walletHoldings[collection.Key] += collection.Value;
+            }
         }
 
         protected void InitializeHoldings()
@@ -24,7 +34,7 @@ namespace PTD_Demo
             }
         }
 
-        public void MakePayment(Dictionary<CurrencyType, int> cost)
+        private void MakePayment(Dictionary<CurrencyType, int> cost)
         {
             foreach (KeyValuePair<CurrencyType, int> currency in cost)
             {

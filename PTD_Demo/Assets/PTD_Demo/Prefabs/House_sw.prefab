@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37f961a696c112f47acb7f4ff5537b45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _merchandiseSO: {fileID: 11400000, guid: 3e04091f6e2f50a4b9612c2f9dfb2641, type: 2}
   _constructionArea:
     m_Position: {x: 0, y: 0, z: 0}
     m_Size: {x: 7, y: 3, z: 1}

@@ -4,6 +4,9 @@ namespace PTD_Demo
 {
     public class ConstructableUnit : MonoBehaviour
     {
+        [SerializeField] private ShopMerchandiseSO _merchandiseSO;
+        public ShopMerchandiseSO merchandiseSO => _merchandiseSO;
+
         private ConstructionGrid _targetGrid;
         public void AssignGrid(ConstructionGrid grid) => _targetGrid = grid;
 
