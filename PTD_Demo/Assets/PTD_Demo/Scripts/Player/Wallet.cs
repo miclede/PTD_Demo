@@ -1,10 +1,15 @@
-using System.Collections.Generic;
-using UnityEngine;
 using Sirenix.OdinInspector;
 using System;
+using System.Collections.Generic;
 
 namespace PTD_Demo
 {
+    public enum CurrencyType
+    {
+        Gold,
+        Material
+    }
+
     public abstract class Wallet : SerializedMonoBehaviour
     {
         public Action<Dictionary<CurrencyType, int>> MakePaymentCallback => (cost) => MakePayment(cost);
@@ -20,9 +25,9 @@ namespace PTD_Demo
 
         public void PaymentCollection(PaymentsSO payment)
         {
-            foreach (KeyValuePair<CurrencyType, int> collection in payment.payments)
+            foreach (KeyValuePair<CurrencyType, int> currency in payment.payments)
             {
-                _walletHoldings[collection.Key] += collection.Value;
+                _walletHoldings[currency.Key] += currency.Value;
             }
         }
 

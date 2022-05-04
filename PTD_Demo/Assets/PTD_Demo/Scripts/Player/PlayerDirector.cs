@@ -13,7 +13,7 @@ namespace PTD_Demo
 
         private void Awake()
         {
-            _myUnitConstructor.constructUnit += 
+            _myUnitConstructor.constructUnit +=
                 (unit) => PurchaseConstructable(unit.merchandiseSO);
 
             _myStorefront.spawnGoods +=

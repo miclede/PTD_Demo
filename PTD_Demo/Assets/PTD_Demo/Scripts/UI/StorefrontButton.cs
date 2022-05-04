@@ -1,9 +1,7 @@
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using System;
-using System.Collections.Generic;
-using StateV2;
 
 namespace PTD_Demo
 {

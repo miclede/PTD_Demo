@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace PTD_Demo
 {
@@ -24,7 +22,7 @@ namespace PTD_Demo
                 int i = 0;
                 foreach (var item in _shopCatalog.availableStock)
                 {
-                    _storeFrontButtons[i].InitializeButton(SpawnGoodsCallback, item.Value);
+                    _storeFrontButtons[i].InitializeButton(SpawnGoodsCallback, item);
                 }
             }
             else throw new Exception("There are not enough buttons made for the amount of stock in catalog: " + _shopCatalog);

@@ -7,7 +7,7 @@ namespace PTD_Demo
     [CreateAssetMenu(fileName = "ShopCatalogSO", menuName = "Shop/Catalog")]
     public class ShopCatalogSO : SerializedScriptableObject
     {
-        [SerializeField] private Dictionary<StockType, ShopMerchandiseSO> _availableStock = new Dictionary<StockType, ShopMerchandiseSO>();
-        public Dictionary<StockType, ShopMerchandiseSO> availableStock => _availableStock;
+        [SerializeField] private List<ShopMerchandiseSO> _availableStock = new List<ShopMerchandiseSO>();
+        public List< ShopMerchandiseSO> availableStock => _availableStock;
     }
 }
